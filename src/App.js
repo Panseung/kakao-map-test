@@ -6,8 +6,9 @@ import Test from './components/test';
 function App() {
   return (
     <div className="App">
-      <KakaoMap/>
+      {/* <KakaoMap/> */}
       {/* <OriginKakao /> */}
+      <Test/>
     </div>
   );
 }

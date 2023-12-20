@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+### 카카오 맵 api 테스트 내용
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. 현재 좌표, 확대 레벨, 지도 경계 좌표, 좌표 -> 픽셀 변환 기능 확인
+2. 기존 건물 지우기 - 불가능 (스카이뷰는 가능한데 보기가 불편)
+3. 이벤트 연결: 가능
+4. 중심좌표 구하기 및 중심 반경으로 검색 결과 띄우기
+   -> 여러 좌표들의 중심점 설정 후 사각형의 사이즈 지정 후 그 안에서 검색 후
+   모든 좌표들이 보이는 레벨로 줌 줄이고 검색결과 띄우기 가능
+5. 사용량: 하루 3만, 월 30만 건 제한 (호출카운팅: 지도 호출 시 한건)
+   (카카오 아아디 하나당 발급 키 하나라서 여러개 등록 후 돌려쓰면 무료일듯?)
+   (유료 가격은 제휴 신청 시 협의 과정 때 정한다고함)
+6. 현재 보고 있는 지도 사이즈에서 특정 구역안에서만 검색 하는 기능 -> 불가능
+   검색은 기본적으로 현재 보고 있는 지도 사이즈 내에서 모두 이루어지는 방식
+7. 검색기능 추가 가능
+8. 검색 했을 때 이미지파일을 제외한 모든 정보 확인 가능
+9. 해당 정보들을 바탕으로 지도 위 위치에 정보 선택적으로 보이게 가능
+10. 현재 보고 있는 지도 내에서만 검색되도록 하는 기능 확인 및
+      현재 영역 안에 없으면 영역을 확대하여 검색하도록 하는 기능 확인
+11. 검색 후 검색 결과들의 중심 좌표로 지동을 자동 이동시켜주는 기능 확인
+12. 검색 여러번 할 시 기존에 지도에 표시됐던 마커 및 UI들 삭제 기능 확인
